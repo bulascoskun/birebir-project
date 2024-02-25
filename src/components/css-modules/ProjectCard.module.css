@@ -1,0 +1,15 @@
+.image {
+  object-fit: cover;
+  aspect-ratio: 475 / 360;
+
+  width: 100%;
+  height: auto;
+
+  box-shadow: 0px 4px 4px 0px #00000040;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.image:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+}

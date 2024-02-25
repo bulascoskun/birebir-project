@@ -1,0 +1,15 @@
+.homepage-navbar {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.image-wrapper {
+  display: flex;
+}
+
+.image-wrapper-image {
+  height: auto;
+  width: 100%;
+}
