@@ -21,11 +21,11 @@
 }
 
 .expanded-link {
-  height: 100px;
+  height: 60px;
 }
 
 @media screen and (max-width: 600px) {
   .expanded-link {
-    height: 50px;
+    height: 25px;
   }
 }
