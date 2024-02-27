@@ -7,7 +7,7 @@ import DefaultNavbar from './DefaultNavbar';
 const HomepageNavbar = () => {
   return (
     <section className={styles['homepage-navbar']}>
-      <DefaultNavbar display="absolute" />
+      <DefaultNavbar />
       <div className={styles['image-wrapper']}>
         <Image
           src={heroImage}

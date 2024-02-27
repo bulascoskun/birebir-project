@@ -7,6 +7,7 @@ const page = () => {
   return (
     <>
       <DefaultNavbar />
+      <div className="margin-top" />
       <Title title="Tüm Portfolyo" />
       <PortfolioGallery />
       <Footer />

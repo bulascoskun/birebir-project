@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import styles from './css-modules/PortfolioHomepage.module.css';
 
@@ -15,15 +16,12 @@ const PortfolioHomepage = () => {
 
   /* MODAL */
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-
   const handleImageClick = (id: number) => {
     setSelectedImage(id);
   };
-
   const closeModal = () => {
     setSelectedImage(null);
   };
-  /* MODAL */
 
   return (
     <section className="homepage-element-container">
@@ -31,6 +29,7 @@ const PortfolioHomepage = () => {
         <ProjectModal selectedImage={selectedImage} closeModal={closeModal} />
       )}
 
+      {/* NORMAL DISPLAY */}
       <div className={`${styles['portfolio-homepage']}`}>
         {/* DISPLAY 1 */}
         <div
@@ -66,21 +65,8 @@ const PortfolioHomepage = () => {
             <div
               className={`${styles['portfolio-display-2-top-text']} ${styles['portfolio-display-text']}`}
             >
-              <h2>Lorem Ipsum</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Consequatur, porro omnis? Tenetur at dolorum facilis possimus
-                minima nulla laudantium, voluptas odio repellendus praesentium
-                ratione adipisci maiores consectetur. Dicta, eum eaque, officia
-                quaerat et voluptatem laudantium molestias vero provident
-                deleniti pariatur minima incidunt quidem possimus. Dolorum earum
-                ea commodi unde. Minima sed eos sint quo dolores deserunt aut
-                incidunt accusantium laboriosam aliquam iusto, ipsum ea
-                doloribus, alias mollitia saepe nisi at cumque pariatur
-                voluptate corporis sapiente ad amet optio! Qui libero eum earum
-                et ullam sapiente sint voluptatem omnis? Dolor ut natus animi
-                non exercitationem? Assumenda eum optio ab possimus obcaecati?
-              </p>
+              <h2>{title}</h2>
+              <p>{info}</p>
               <span
                 className={styles['see-all']}
                 onClick={() => handleImageClick(2)}
@@ -113,21 +99,8 @@ const PortfolioHomepage = () => {
             <div
               className={`${styles['portfolio-display-1-right-text']} ${styles['portfolio-display-text']}`}
             >
-              <h2>Lorem Ipsum</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Consequatur, porro omnis? Tenetur at dolorum facilis possimus
-                minima nulla laudantium, voluptas odio repellendus praesentium
-                ratione adipisci maiores consectetur. Dicta, eum eaque, officia
-                quaerat et voluptatem laudantium molestias vero provident
-                deleniti pariatur minima incidunt quidem possimus. Dolorum earum
-                ea commodi unde. Minima sed eos sint quo dolores deserunt aut
-                incidunt accusantium laboriosam aliquam iusto, ipsum ea
-                doloribus, alias mollitia saepe nisi at cumque pariatur
-                voluptate corporis sapiente ad amet optio! Qui libero eum earum
-                et ullam sapiente sint voluptatem omnis? Dolor ut natus animi
-                non exercitationem? Assumenda eum optio ab possimus obcaecati?
-              </p>
+              <h2>{title}</h2>
+              <p>{info}</p>
               <span
                 className={styles['see-all']}
                 onClick={() => handleImageClick(3)}
@@ -146,21 +119,8 @@ const PortfolioHomepage = () => {
             <div
               className={`${styles['portfolio-display-2-top-text']} ${styles['portfolio-display-text']}`}
             >
-              <h2>Lorem Ipsum</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Consequatur, porro omnis? Tenetur at dolorum facilis possimus
-                minima nulla laudantium, voluptas odio repellendus praesentium
-                ratione adipisci maiores consectetur. Dicta, eum eaque, officia
-                quaerat et voluptatem laudantium molestias vero provident
-                deleniti pariatur minima incidunt quidem possimus. Dolorum earum
-                ea commodi unde. Minima sed eos sint quo dolores deserunt aut
-                incidunt accusantium laboriosam aliquam iusto, ipsum ea
-                doloribus, alias mollitia saepe nisi at cumque pariatur
-                voluptate corporis sapiente ad amet optio! Qui libero eum earum
-                et ullam sapiente sint voluptatem omnis? Dolor ut natus animi
-                non exercitationem? Assumenda eum optio ab possimus obcaecati?
-              </p>
+              <h2>{title}</h2>
+              <p>{info}</p>
               <span
                 className={styles['see-all']}
                 onClick={() => handleImageClick(4)}
@@ -178,6 +138,38 @@ const PortfolioHomepage = () => {
             />
           </div>
         </div>
+      </div>
+
+      {/* SMALL DISPLAY */}
+      <div className={`${styles['portfolio-small']}`}>
+        <Image
+          src={img}
+          alt={title}
+          className={`${styles['portfolio-small-image']}`}
+          onClick={() => handleImageClick(1)}
+          priority
+        />
+        <Image
+          src={portfolioImage2}
+          alt={title}
+          className={`${styles['portfolio-small-image']}`}
+          onClick={() => handleImageClick(2)}
+          priority
+        />
+        <Image
+          src={portfolioImage3}
+          alt={title}
+          className={`${styles['portfolio-small-image']}`}
+          onClick={() => handleImageClick(3)}
+          priority
+        />
+        <Image
+          src={portfolioImage4}
+          alt={title}
+          className={`${styles['portfolio-small-image']}`}
+          onClick={() => handleImageClick(4)}
+          priority
+        />
       </div>
     </section>
   );

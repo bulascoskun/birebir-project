@@ -1,22 +1,11 @@
-.box {
-  width: calc(50% - 4rem);
-  box-shadow: 0px 4px 4px 0px #00000040;
-}
-
-.contact-form {
-  padding: 2rem 2rem;
-
-  background: #efefef;
-}
-
-.contact-form form {
+.contact-form-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.contact-form form input,
-.contact-form form textarea,
+.contact-form-form input,
+.contact-form-form textarea,
 .submit {
   border: none;
   padding: 0.8rem;
@@ -24,13 +13,13 @@
   border: 1px solid #bfbfbf;
 }
 
-.contact-form form textarea {
+.contact-form-form textarea {
   min-height: 4rem;
   resize: none;
 }
 
-.contact-form form input::placeholder,
-.contact-form form textarea::placeholder,
+.contact-form-form input::placeholder,
+.contact-form-form textarea::placeholder,
 .submit {
   font-family: 'Lexend', sans-serif;
 }
@@ -65,4 +54,10 @@
 
 .submit:active {
   box-shadow: none;
+}
+
+@media screen and (max-width: 500px) {
+  .input-group {
+    gap: 5vw;
+  }
 }

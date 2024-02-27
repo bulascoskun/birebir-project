@@ -49,7 +49,9 @@ const ContactUsHomepage = () => {
           </div>
 
           {/* FORM */}
-          <ContactUsForm />
+          <div className={`${styles['contact-form']} ${styles['box']}`}>
+            <ContactUsForm />
+          </div>
         </div>
 
         {/* GOOGLE MAP */}

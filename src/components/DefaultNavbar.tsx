@@ -14,7 +14,11 @@ import {
   MdOutlineVilla,
   MdOutlineLocalPhone,
   MdOutlineMessage,
+  MdMenu,
 } from 'react-icons/md';
+import { LiaTimesSolid } from 'react-icons/lia';
+
+import { useEffect, useState } from 'react';
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -24,18 +28,92 @@ const lexend = Lexend({
 const DefaultNavbar = ({ display }: { display?: 'absolute' }) => {
   const pathname = usePathname();
 
-  const navbarContainerClass = () => {
-    if (display === 'absolute') {
-      return styles['navbar-container-absolute'];
+  const [isSticky, setIsSticky] = useState(false);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
+  const scrollHeader = () => {
+    if (window.scrollY >= 50) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
     }
-    return '';
   };
+
+  const handleHamburgerClick = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHeader);
+    return () => window.addEventListener('scroll', scrollHeader);
+  }, []);
 
   return (
     <section className="homepage-element-container">
-      <nav
-        className={`${styles['navbar-container']} ${navbarContainerClass()}`}
+      {/* HAMBURGER MENU */}
+      <div
+        className={`${styles['hamburger-menu']} ${
+          isHamburgerOpen ? styles['hamburger-menu-active'] : ''
+        }`}
       >
+        <div className={styles['hamburger-menu-title']}>
+          Menu
+          <LiaTimesSolid onClick={handleHamburgerClick} />
+        </div>
+        <ul className={styles['hamburger-links']}>
+          <li>
+            <Link
+              onClick={handleHamburgerClick}
+              href="/"
+              className={`${styles['hamburger-links-link']}`}
+            >
+              <MdOutlineHome className={styles['hamburger-icon']} />
+              Anasayfa
+            </Link>
+          </li>
+          <li>
+            <a
+              onClick={handleHamburgerClick}
+              href="/#hakkimizda"
+              className={styles['hamburger-links-link']}
+            >
+              <MdSort className={styles['hamburger-icon']} />
+              Hakkımızda
+            </a>
+          </li>
+          <li>
+            <Link
+              onClick={handleHamburgerClick}
+              href="/projeler"
+              className={styles['hamburger-links-link']}
+            >
+              <MdOutlineVilla className={styles['hamburger-icon']} />
+              Projeler
+            </Link>
+          </li>
+          <li>
+            <a
+              onClick={handleHamburgerClick}
+              href="/#iletisim"
+              className={styles['hamburger-links-link']}
+            >
+              <MdOutlineLocalPhone className={styles['hamburger-icon']} />
+              İletişim
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* ACTUAL NAVBAR */}
+      <nav
+        className={`${styles['navbar-container']} ${
+          styles['navbar-container-absolute']
+        } ${isSticky ? styles['navbar-container-sticky'] : ''}`}
+      >
+        <MdMenu
+          className={styles['menu-icon']}
+          onClick={handleHamburgerClick}
+        />
         <Link className={styles['logo-container']} href="/">
           <Image
             src={logoImage}

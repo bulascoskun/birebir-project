@@ -16,44 +16,42 @@ const ContactUsForm = () => {
   };
 
   return (
-    <div className={`${styles['contact-form']} ${styles['box']}`}>
-      <form onSubmit={handleSubmit}>
-        <div className={`${styles['input-group']}`}>
-          <input
-            className={lexend.className}
-            type="text"
-            name="isim"
-            placeholder="İsim"
-          />
-          <input
-            className={lexend.className}
-            type="text"
-            name="soyisim"
-            placeholder="Soyisim"
-          />
-        </div>
-
+    <form className={`${styles['contact-form-form']}`} onSubmit={handleSubmit}>
+      <div className={`${styles['input-group']}`}>
         <input
           className={lexend.className}
-          type="email"
-          name="email"
-          placeholder="E-Posta Adresi"
+          type="text"
+          name="isim"
+          placeholder="İsim"
         />
-
-        <textarea
+        <input
           className={lexend.className}
-          name="message"
-          placeholder="Mesajınız"
-        ></textarea>
+          type="text"
+          name="soyisim"
+          placeholder="Soyisim"
+        />
+      </div>
 
-        <button
-          className={`${styles['submit']} ${lexend.className}`}
-          type="submit"
-        >
-          Gönder
-        </button>
-      </form>
-    </div>
+      <input
+        className={lexend.className}
+        type="email"
+        name="email"
+        placeholder="E-Posta Adresi"
+      />
+
+      <textarea
+        className={lexend.className}
+        name="message"
+        placeholder="Mesajınız"
+      ></textarea>
+
+      <button
+        className={`${styles['submit']} ${lexend.className}`}
+        type="submit"
+      >
+        Gönder
+      </button>
+    </form>
   );
 };
 export default ContactUsForm;

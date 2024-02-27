@@ -1,15 +1,33 @@
 .navbar-container {
+  position: absolute;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  width: 90%;
-  padding: 1.5rem 0;
-  margin-bottom: 3rem;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  transition: all 0.6s ease-in;
+  z-index: 9999;
 }
 
-.navbar-container-absolute {
-  position: absolute;
+.navbar-container-sticky {
+  position: fixed;
+  background-color: var(--color-3);
+  padding: 0.3rem 3rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar-container-sticky ul li a {
+  color: var(--color-8);
+}
+
+.navbar-container-sticky ul li a:hover {
+  color: var(--color-2);
+}
+
+.navbar-container-sticky ul li div {
+  border-bottom: 2px solid var(--color-3);
 }
 
 .logo-container {
@@ -17,7 +35,7 @@
 }
 
 .navbar-logo {
-  width: 120px;
+  width: 80px;
   height: auto;
 }
 
@@ -86,4 +104,115 @@
 
 .offer-button:active {
   box-shadow: none;
+}
+
+.menu-icon {
+  display: none;
+
+  position: absolute;
+  color: var(--color-8);
+
+  left: 5%;
+
+  font-size: 2rem;
+}
+
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  right: 100%;
+
+  z-index: 10000;
+
+  background-color: var(--color-3);
+  box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.2);
+  color: var(--color-8);
+
+  font-size: 1.2rem;
+  overflow: auto;
+
+  transition: all 1s ease-in-out;
+}
+
+.hamburger-menu-active {
+  right: 10%;
+}
+
+.hamburger-menu-title {
+  position: relative;
+  width: 90%;
+
+  display: flex;
+  justify-content: center;
+  padding: 1.7rem;
+  margin: 0 auto;
+
+  border-bottom: 1px solid var(--color-8);
+}
+
+.hamburger-menu-title svg {
+  position: absolute;
+  right: 0;
+  top: 38%;
+}
+
+.hamburger-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2.7rem;
+
+  list-style: none;
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.hamburger-links-link {
+  color: var(--color-8);
+  text-decoration: none;
+  font-weight: 300;
+
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+
+  width: fit-content;
+}
+
+.hamburger-icon {
+  font-size: 1.6rem;
+  margin-right: 0.7rem;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-logo {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .navbar-container {
+    background-color: var(--color-3);
+  }
+
+  .navbar-links,
+  .offer-button {
+    display: none;
+  }
+
+  .navbar-container {
+    justify-content: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .menu-icon {
+    font-size: 3rem;
+  }
 }

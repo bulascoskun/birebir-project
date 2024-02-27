@@ -5,12 +5,13 @@
   flex-direction: column;
   justify-content: center;
 
-  gap: 4rem;
+  row-gap: 4rem;
 }
 
 .big-row {
   display: flex;
   justify-content: space-between;
+
   gap: 4rem;
 }
 
@@ -23,6 +24,11 @@
   background-color: var(--color-3);
   color: var(--color-8);
   padding: 3.5rem 2rem;
+}
+
+.contact-form {
+  padding: 2rem 2rem;
+  background: #efefef;
 }
 
 .box h3 {
@@ -59,4 +65,28 @@
   height: 400px;
   box-shadow: 0px 4px 4px 0px #00000040;
   margin-bottom: 6rem;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .big-row {
+    flex-direction: column;
+  }
+  .box {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+  .big-row {
+    gap: 2rem;
+  }
+  .box {
+    width: 50%;
+  }
 }

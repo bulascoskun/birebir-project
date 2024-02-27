@@ -8,7 +8,7 @@ import Title from '@/components/Title';
 
 export default function Home() {
   return (
-    <main>
+    <main className="homepage-main">
       <HomepageNavbar />
       <Title title="Portfolyo" />
       <PortfolioHomepage />

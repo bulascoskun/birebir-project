@@ -59,6 +59,8 @@
   text-decoration: none;
   color: var(--color-8);
   transition: all 0.2s ease;
+
+  overflow: hidden;
 }
 
 .contact-row a:hover {
@@ -75,4 +77,37 @@
 
 .icon {
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .row {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 3rem;
+  }
+
+  .info-container {
+    width: 100%;
+  }
+
+  .copyright {
+    margin: 1.5rem 0;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .row {
+    padding: 2rem;
+    gap: 3rem;
+  }
+
+  .info-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1400px) {
+  .row {
+    gap: 5rem;
+  }
 }

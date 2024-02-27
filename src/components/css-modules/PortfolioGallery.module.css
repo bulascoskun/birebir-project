@@ -4,7 +4,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  gap: 5rem;
+  gap: 7vw;
 
   margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 1150px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
