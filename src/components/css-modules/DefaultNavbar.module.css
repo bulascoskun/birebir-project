@@ -12,7 +12,7 @@
 }
 
 .navbar-container-sticky {
-  position: fixed;
+  position: fixed !important;
   background-color: var(--color-3);
   padding: 0.3rem 3rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -121,7 +121,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: -100%;
 
   right: 100%;
 
@@ -134,10 +134,11 @@
   font-size: 1.2rem;
   overflow: auto;
 
-  transition: all 1s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .hamburger-menu-active {
+  left: 0%;
   right: 10%;
 }
 

@@ -19,3 +19,13 @@
   width: 80%;
   border-bottom: 1px solid;
 }
+
+.expanded-link {
+  height: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .expanded-link {
+    height: 50px;
+  }
+}

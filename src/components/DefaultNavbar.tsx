@@ -32,7 +32,7 @@ const DefaultNavbar = ({ display }: { display?: 'absolute' }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   const scrollHeader = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 20) {
       setIsSticky(true);
     } else {
       setIsSticky(false);

@@ -7,9 +7,10 @@ const page = () => {
   return (
     <>
       <DefaultNavbar />
-      <div className="margin-top" />
-      <Title title="Tüm Portfolyo" />
-      <PortfolioGallery />
+      <div className="margin-top">
+        <Title title="Tüm Portfolyo" />
+        <PortfolioGallery />
+      </div>
       <Footer />
     </>
   );

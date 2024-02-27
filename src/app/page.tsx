@@ -22,3 +22,7 @@ export default function Home() {
     </main>
   );
 }
+
+// .expanded-link {
+//   width: calc(100% + 100px); /* veya istediğiniz piksel değeri */
+// }
