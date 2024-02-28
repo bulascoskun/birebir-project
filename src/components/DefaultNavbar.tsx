@@ -72,14 +72,14 @@ const DefaultNavbar = ({ display }: { display?: 'absolute' }) => {
             </Link>
           </li>
           <li>
-            <a
+            <Link
               onClick={handleHamburgerClick}
-              href="/#hakkimizda"
-              className={styles['hamburger-links-link']}
+              href="/hakkimizda"
+              className={`${styles['hamburger-links-link']}`}
             >
               <MdSort className={styles['hamburger-icon']} />
               Hakkımızda
-            </a>
+            </Link>
           </li>
           <li>
             <Link
@@ -134,10 +134,18 @@ const DefaultNavbar = ({ display }: { display?: 'absolute' }) => {
             />
           </li>
           <li>
-            <a href="/#hakkimizda" className={styles['navbar-links-link']}>
+            <Link
+              href="/hakkimizda"
+              className={`${styles['navbar-links-link']}`}
+            >
               <MdSort className={styles['icon']} />
               Hakkımızda
-            </a>
+            </Link>
+            <div
+              className={`${
+                pathname === '/hakkimizda' ? styles['navlink-underline'] : ''
+              }`}
+            />
           </li>
           <li>
             <Link href="/projeler" className={styles['navbar-links-link']}>

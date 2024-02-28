@@ -12,10 +12,7 @@ export default function Home() {
       <HomepageNavbar />
       <Title title="Portfolyo" />
       <PortfolioHomepage />
-      <Title title="Hakkımızda" href="hakkimizda" />
-      <AboutHomepage />
-      <Title title="Ekibimiz" />
-      <TeamHomepage />
+
       <Title title="Bize Ulaşın" href="iletisim" />
       <ContactUsHomepage />
       <Footer />

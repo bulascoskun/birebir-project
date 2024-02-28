@@ -31,7 +31,7 @@ const Footer = () => {
                 <Link href="/">Anasayfa</Link>
               </li>
               <li>
-                <a href="/#hakkimizda">Hakkımızda</a>
+                <Link href="/hakkimizda">Hakkımızda</Link>
               </li>
               <li>
                 <Link href="/projeler">Projeler</Link>
