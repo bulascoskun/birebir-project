@@ -28,25 +28,11 @@ const lexend = Lexend({
 const DefaultNavbar = ({ display }: { display?: 'absolute' }) => {
   const pathname = usePathname();
 
-  const [isSticky, setIsSticky] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-
-  const scrollHeader = () => {
-    if (window.scrollY >= 20) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
-  };
 
   const handleHamburgerClick = () => {
     setIsHamburgerOpen(!isHamburgerOpen);
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', scrollHeader);
-    return () => window.addEventListener('scroll', scrollHeader);
-  }, []);
 
   return (
     <section className="homepage-element-container">
@@ -106,9 +92,7 @@ const DefaultNavbar = ({ display }: { display?: 'absolute' }) => {
 
       {/* ACTUAL NAVBAR */}
       <nav
-        className={`${styles['navbar-container']} ${
-          styles['navbar-container-absolute']
-        } ${isSticky ? styles['navbar-container-sticky'] : ''}`}
+        className={`${styles['navbar-container']} ${styles['navbar-container-absolute']} ${styles['navbar-container-sticky']}`}
       >
         <MdMenu
           className={styles['menu-icon']}
